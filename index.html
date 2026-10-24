@@ -102,4 +102,150 @@
     }
 
     ul.posts { list-style: none; padding: 0; margin: 0; }
-    ul.posts li
+    ul.posts li { padding: 10px 0; display: flex; gap: 16px; }
+    ul.posts time { color: var(--muted); font-size: 14px; min-width: 96px; }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 24px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    @media (max-width: 600px) {
+      nav a { margin-left: 12px; }
+      ul.posts li { flex-direction: column; gap: 2px; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="top">
+  <div class="name">Prabhat Joshi</div>
+  <nav>
+    <a href="#research">Research</a>
+    <a href="#publications">Publications</a>
+    <a href="#writing">Writing</a>
+    <a href="#about">About</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <h1>Urban water,<br>climate and land systems.</h1>
+  <p>I am an environmental engineer and researcher in quantitative urban hydrology and water infrastructure. I model how blue-green infrastructure and drainage systems perform under rainfall and climate change.</p>
+  <p class="meta">Postdoctoral Research Associate, King's College London &middot; PhD, ETH Z&uuml;rich / Eawag (2026)</p>
+</div>
+
+<main>
+
+  <section id="research">
+    <h2>Research</h2>
+    <div class="grid" id="projects"></div>
+  </section>
+
+  <section id="publications">
+    <h2>Publications</h2>
+    <ul class="pubs" id="pubs"></ul>
+  </section>
+
+  <section id="writing">
+    <h2>Writing</h2>
+    <ul class="posts" id="posts"></ul>
+  </section>
+
+  <section id="about">
+    <h2>About</h2>
+    <p>Currently based in London. Previously worked as an environmental engineer on city sanitation and water safety plans in Nepal, a researcher at the Asian Institute of Technology in Thailand, and a climate policy analyst at Climate Analytics Nepal.</p>
+    <p>Contact: <a href="mailto:you@example.com">you@example.com</a></p>
+  </section>
+
+</main>
+
+<footer>
+  &copy; <span id="year"></span> Prabhat Joshi
+</footer>
+
+<script>
+  /* ---------- EDIT ONLY THIS BLOCK ---------- */
+
+  const projects = [
+    {
+      title: "Joined Up Landscapes (JUL)",
+      desc: "System dynamics modelling of macro-scale drivers of land system change (WP4).",
+      image: "",
+      link: "#"
+    },
+    {
+      title: "Seasonal 1 km soil moisture emulator",
+      desc: "Emulating soil moisture and surface runoff under RCP scenarios on HPC.",
+      image: "",
+      link: "#"
+    },
+    {
+      title: "Blue-green infrastructure monitoring",
+      desc: "Spatio-temporal monitoring and performance of BGI and combined sewer overflow mitigation (PhD, ETH Z\u00fcrich / Eawag).",
+      image: "",
+      link: "#"
+    },
+    {
+      title: "IPCC AR7, Chapter 6",
+      desc: "Chapter scientist: global projections of Earth system responses across time scales.",
+      image: "",
+      link: "#"
+    }
+  ];
+
+  const publications = [
+    {
+      title: "Paper title goes here",
+      authors: "Joshi, P., Co-author, A.",
+      venue: "Journal of Hydrology, 2025",
+      type: "Journal",
+      link: "#"
+    },
+    {
+      title: "Second paper title",
+      authors: "Joshi, P., Co-author, B.",
+      venue: "Water Research",
+      type: "Journal",
+      link: "#"
+    },
+    {
+      title: "Data paper title",
+      authors: "Joshi, P., Co-author, C.",
+      venue: "Data in Brief",
+      type: "Data",
+      link: "#"
+    }
+  ];
+
+  const posts = [
+    { date: "2026-01-01", title: "Blog post title", link: "#" }
+  ];
+
+  /* ---------- RENDERING (no need to edit) ---------- */
+
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+  document.getElementById("projects").innerHTML = projects.map(p => `
+    <a class="card" href="${esc(p.link)}">
+      <div class="thumb" style="${p.image ? `background-image:url('${esc(p.image)}')` : ""}"></div>
+      <h3>${esc(p.title)}</h3>
+      <p>${esc(p.desc)}</p>
+    </a>`).join("");
+
+  document.getElementById("pubs").innerHTML = publications.map(p => `
+    <li>
+      <div class="title"><a href="${esc(p.link)}">${esc(p.title)}</a></div>
+      <div class="venue"><span class="tag">${esc(p.type)}</span>${esc(p.authors)} &middot; ${esc(p.venue)}</div>
+    </li>`).join("");
+
+  document.getElementById("posts").innerHTML = posts.map(p => `
+    <li><time>${esc(p.date)}</time><a href="${esc(p.link)}">${esc(p.title)}</a></li>`).join("");
+
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
