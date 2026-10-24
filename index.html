@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prabhat Joshi</title>
+  <meta name="description" content="Prabhat Joshi: environmental engineer and urban hydrology researcher. Publications, projects and writing.">
+  <style>
+    :root {
+      --ink: #111;
+      --muted: #6b6b6b;
+      --line: #e4e4e4;
+      --accent: #a31f34;
+      --bg: #fff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.5;
+    }
+    a { color: inherit; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    header.top {
+      border-bottom: 1px solid var(--line);
+      padding: 14px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    header.top .name { font-weight: 700; letter-spacing: .02em; }
+    nav a { margin-left: 18px; font-size: 14px; color: var(--muted); }
+    nav a:hover { color: var(--ink); }
+
+    .hero {
+      padding: 64px 24px 48px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .hero h1 {
+      font-size: clamp(36px, 6vw, 64px);
+      line-height: 1.05;
+      margin: 0 0 16px;
+      font-weight: 800;
+      letter-spacing: -.02em;
+    }
+    .hero p {
+      font-size: 19px;
+      max-width: 680px;
+      margin: 0 0 12px;
+      color: #333;
+    }
+    .hero .meta { font-size: 14px; color: var(--muted); }
+
+    main { max-width: 1100px; margin: 0 auto; padding: 0 24px 80px; }
+    section { margin-top: 56px; }
+    section h2 {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      color: var(--muted);
+      font-weight: 700;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 8px;
+      margin: 0 0 24px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    .card { display: block; }
+    .card .thumb {
+      aspect-ratio: 4 / 3;
+      background: #ddd center/cover no-repeat;
+      margin-bottom: 12px;
+    }
+    .card h3 { font-size: 18px; margin: 0 0 6px; line-height: 1.25; }
+    .card p { font-size: 14px; color: var(--muted); margin: 0; }
+    .card:hover h3 { text-decoration: underline; }
+
+    ul.pubs { list-style: none; padding: 0; margin: 0; }
+    ul.pubs li {
+      padding: 16px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    ul.pubs .title { font-weight: 600; }
+    ul.pubs .venue { font-size: 14px; color: var(--muted); margin-top: 2px; }
+    ul.pubs .tag {
+      display: inline-block;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--accent);
+      margin-right: 8px;
+    }
+
+    ul.posts { list-style: none; padding: 0; margin: 0; }
+    ul.posts li
